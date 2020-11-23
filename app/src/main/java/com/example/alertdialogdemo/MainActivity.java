@@ -10,23 +10,33 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    AlertDialog.Builder builder;
+    
     private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button) findViewById(R.id.button);
-        builder = new AlertDialog.Builder(this);
+        
+        bindLayoutView();
         setUpDataWithView();
     }
 
+    private void bindLayoutView() {
+     button = (Button) findViewById(R.id.button);   
+    }
+    
     private void setUpDataWithView() {
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showExampleAlertDialog();
+            }
+        });
+    }
+
+    private void showExampleAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(R.string.dailog_massage).setTitle(R.string.dailog_title);
 
                 builder.setMessage("Do you want to close this app");
@@ -51,9 +61,5 @@ public class MainActivity extends AppCompatActivity {
 
                 alert.setTitle("Alert dialog Example");
                 alert.show();
-            }
-        });
     }
-
-
 }
