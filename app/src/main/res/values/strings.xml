@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AlertDialogDemo</string>
+    <string name="dailog_massage">Welcome to Alert Dailog</string>
+    <string name="dailog_title">Javatpoint Alert Dailog</string>
 </resources>
